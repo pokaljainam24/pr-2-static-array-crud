@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #212529;
+        }
+
+        .id-card {
+            width: 300px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, rgba(93, 110, 197, 1) 0%, rgb(60, 74, 139) 32%, rgb(55, 73, 104) 100%);
+            box-shadow: -2px 1px 10px rgb(255, 255, 255);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .profile-pic {
+            width: 50%;
+            height: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #007bff;
+        }
+
+        .id-details {
+            margin-top: 10px;
+        }
+
+        .id-details h5 {
+            margin: 5px 0;
+            color: #ffffff;
+            margin-bottom: 20px !important;
+        }
+
+        .id-details p {
+            width: 200px;
+            margin-top: 10px !important;
+            text-align: start;
+            margin: auto;
+            color: #ffffff;
+            gap: 30px;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="p-3 mb-3 border-bottom fixed-top bg-dark">
+        <div class="container w-75">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/" class="nav-link px-2 text-info fs-4"><i class="bi bi-house-heart-fill"></i> Home</a></li>
+                </ul>
+
+                <a class="fs-3 d-flex flex-row justify-content-center align-items-center gap-2 text-info mx-5 text-decoration-none"
+                    href="/viewdata"><span class="fs-5">View Data</span>
+                    <i class="bi bi-eye"></i></a>
+
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block text-light text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://avatars.githubusercontent.com/u/158015189?v=4" alt="mdo" width="45" height="45" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/">SignUp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="d-flex justify-content-center gap-3 align-items-center vh-100">
+        <% users.forEach(user=> { %>
+            <div class="id-card">
+                <img src="https://imgcdn.stablediffusionweb.com/2024/11/13/88b4eb1d-ebad-4dd3-a3c1-c63fac35d4d4.jpg"
+                    alt="Profile Picture" class="profile-pic">
+                <div class="id-details">
+                    <h5>
+                        <i class="bi bi-person-fill"></i>
+                        <%= user.Username %>
+                    </h5>
+                    <p>
+                        <span>Id </span>
+                        <%= user.id %>
+                    </p>
+                    <p>
+                        <i class="bi bi-envelope-at-fill"></i>
+                        <%= user.Email %>
+                    </p>
+                    <p>
+                        <i class="bi bi-shield-lock-fill"></i>
+                        <%= user.Password %>
+                    </p>
+                    <p>
+                        <i class="bi bi-telephone-fill"></i>
+                        <%= user.Phone %>
+                    </p>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
