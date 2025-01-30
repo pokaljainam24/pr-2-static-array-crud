@@ -16,7 +16,8 @@
         }
 
         .id-card {
-            width: 300px;
+            width: 40%;
+            gap: 30px;
             border-radius: 10px;
             background: linear-gradient(90deg, rgba(93, 110, 197, 1) 0%, rgb(60, 74, 139) 32%, rgb(55, 73, 104) 100%);
             box-shadow: -2px 1px 10px rgb(255, 255, 255);
@@ -27,24 +28,28 @@
         .profile-pic {
             width: 50%;
             height: 150px;
-            height: 150px;
-            border-radius: 50%;
+            height: 200px;
+            border-radius: 10px;
+            margin: auto;
             object-fit: cover;
             border: 3px solid #007bff;
         }
 
         .id-details {
             margin-top: 10px;
+            width: 100%;
+            padding: 5px;
         }
 
         .id-details h5 {
+            font-size: 1.5rem;
             margin: 5px 0;
             color: #ffffff;
             margin-bottom: 20px !important;
         }
 
         .id-details p {
-            width: 200px;
+            font-size: 1.1rem;
             margin-top: 10px !important;
             text-align: start;
             margin: auto;
@@ -87,9 +92,9 @@
         </div>
     </header>
 
-    <div class="d-flex justify-content-center gap-3 align-items-center vh-100">
+    <div class="d-flex flex-wrap justify-content-center gap-3 align-items-center vh-100" style="margin-top: 100px !important;">
         <% users.forEach(user=> { %>
-            <div class="id-card">
+            <div class="id-card d-flex">
                 <img src="https://imgcdn.stablediffusionweb.com/2024/11/13/88b4eb1d-ebad-4dd3-a3c1-c63fac35d4d4.jpg"
                     alt="Profile Picture" class="profile-pic">
                 <div class="id-details">
@@ -106,7 +111,7 @@
                         <%= user.Email %>
                     </p>
                     <p>
-                        <i class="bi bi-shield-lock-fill"></i>
+                        <i class="bi bi-key-fill"></i>
                         <%= user.Password %>
                     </p>
                     <p>
